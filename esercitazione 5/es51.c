@@ -2,21 +2,26 @@
 #include <stdbool.h>
 float valoreassoluto(float a){
     
-	printf("Il valore assoluto è: %f", a);
+	
 	if(a>=0){
-        return a;
+   		printf("Il valore assoluto è: %f", a);	 
+	    return a;
+   		 printf("Il valore assoluto è: %f\n", a);
     }
     else{
+		printf("Il valore assoluto è: %f", -a);
+	
         return -a;
+		 printf("Il valore assoluto è: %f\n", -a);
     }
 }
 bool minore(float a, float b){
     //se il valore assoluto del primo numero è minore del valore assoluto del secondo allora la funzione ritorna vero
-    if(valoreassoluto(a)<valoreassoluto(b)){
-        return true;
+    if(valoreassoluto(b)<=valoreassoluto(a)){
+        return false;
     }
     else{
-        return false;
+        return true;
     }
 }
 int main(){
