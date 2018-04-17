@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdbool.h>
 float valoreassoluto(float a){
-    if(a>=0){
+    
+	printf("Il valore assoluto è: %f", a);
+	if(a>=0){
         return a;
     }
     else{
@@ -29,14 +31,16 @@ int main(){
     while(i<n){
         printf("Inserisci un valore: ");
         scanf("%f",&vect[i]);
+        ++i;
     }
     i=0;
     while(i<n){
 			if(minore((x-vect[i]),eps)){
-				printf("La distanza tra %f e il valore %f è minore di %f",x, vect[i], eps);
+				printf("La distanza tra %f e il valore %f è MINORE di %f\n",x, vect[i], eps);
 			}
    			else{
-				printf("La distanza tra %f e il valore %f è maggiore di %f",x, vect[i], eps);
+				printf("La distanza tra %f e il valore %f è MAGGIORE di %f\n",x, vect[i], eps);
 			}
+			++i;
     }
 }
