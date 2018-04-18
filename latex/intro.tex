@@ -1,0 +1,22 @@
+\documentclass{article}
+% Allow the usage of utf8 characters
+\usepackage[utf8]{inputenc}
+% Uncomment the following line to allow the usage of graphics (.png, .jpg)
+%\usepackage{graphicx}
+
+% Start the document
+\begin{document}
+
+% Create a new 1st level heading
+\section{Principali definizioni di termodinamica}
+A differenza della dinamica classica dove per descrivere un sistema di punti sono necessarie $6N$ variabili, in termodinamica si preferiscono delle variabili macroscopiche($P$, $V$, $T$, il numero di moli...) in quanto essendo N un numero troppo grande si dovrebbero avere troppe informazioni per descrivere il sistema. È utile definire subito sistema ed ambiente: il primo è la porzione di spazio che è oggetto di studio, l'ambiente è ciò che non è sistema. Un sistema può essere: \begin{itemize} \item Aperto: il sistema scambia energia e materia con l'ambiente
+\item Chiuso: il sistema può scambiare energia con l'ambiente
+\item Isolato: il sistema non può scambiare nè energia nè materia con l'ambiente
+\end{itemize}
+Un concetto di fondamentale importanza in termodinamica è lo \textit{stato di equilibrio}, il quale è uno stato durante il quale le grandezze termodinamiche caratteristiche del sistema non variano. Le \textit{variabili di stato} sono variabili macroscopiche termodinamiche che caratterizzano completamente un sistema. 
+Per un gas di una sola specie chimica le variabili di stato sono: tipo di gas, $V$, $T$, $P$, $N$. Per un gas di $M$ specie chimiche le variabili sono gli $M$ tipi di gas, $V$, $T$, $P$, $N_1$, $N_2$...\\
+Essendo la materia di studio dinamica sarà necessario definire le trasformazioni termodinamiche. Si definisce una \textit{trasformazione termodinamica} il passaggio da uno stato di equilibrio $A$ ad uno stato di equilibrio $B$. \\ Una definizione della temperatura può essere ricavata dal \textbf{principio 0} della termodinamica: se $A$ è in equilibrio con un sistema $C$ e $B$ è in equilibrio con $C$ allora $A$ è in equilibrio con $B$. La grandezza che indica l'equilibrio termico tra sistemi è la \textit{temperatura}. Nel principio 0 il sistema C si comporta come un termometro. \\ La scala per la temperatura(Celsius) è lineare dunque $\theta=a+bx$ si pone come $\theta=0$ la temperatura di equilibrio tra acqua e ghiaccio ad 1 atm di pressione mentre $\theta=100$ la temperatura di equilibrio tra acqua e ghiaccio ad 1 atm di pressione. \\ Per rendere la scala della temperatura indipendente dal materiale del termometro si considera un gas rarefatto a volume costante inserito in un contenitore tale da permettergli di variare la sua pressione. Quando il gas passa dall'essere a contatto con una sorgente a temperatura $T_A$ ad essere a contatto con una sorgente a temperatura $T_B$, la pressione del gas varia(l'altezza del gas nel contenitore varia) in un modo indipendente dalla specie chimica del gas.\\
+La scala assoluta della temperatura appena definita è la scala Kelvin ed è del tipo $T=\alpha p$ con $p$ pressione misurata e $\alpha=\frac{T_{tr}}{P _{tr}}$ ovvero il rapporto tra temperatura e pressione del punto triplo dell'acqua, punto in cui coesistono stato gassoso, solido e liquido dell'acqua. Avviene che $T=\theta+273.15$.
+La pressione è definita come $P=\frac{{\vec{F} \cdot \hat{n}}}{S}=\frac{[N]}{[m^2]}$, quindi l'ambiente(l'esterno) esercita una forza $F_e=pS$ da cui un lavoro $\delta Q_e=\vec{F_e}\cdot \vec{dx}=p_e Sdx=p_e dV$. Il lavoro che il sistema compie sull'ambiente sarà $\delta Q=-\delta Q_e$.
+
+\end{document}
