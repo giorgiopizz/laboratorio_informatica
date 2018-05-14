@@ -4,8 +4,8 @@
 
 int inferiore(float x, float y){
     float nx, ny, absx, absy;
-    nx=((int)x*10000)/10000;
-    ny=((int)y*10000)/10000;
+    nx=((float)((int)(x*10000)))/10000;
+    ny=((float)((int)(y*10000)))/10000;
     if(nx<0){
         absx=-nx;
     }
@@ -25,9 +25,6 @@ int inferiore(float x, float y){
         return 1;
     }
 }
-
-
-
 int main(){
 	int n, i=0;
 	float x, eps;
@@ -36,8 +33,12 @@ int main(){
 	scanf("%f",&eps);
 	float * p;
 	p=(float *) malloc(n*sizeof(float));
+	if(p==NULL){
+            exit(EXIT_FAILURE);
+	}
 	while(i<n){
-	    scanf("%f", p[i]);
+	    printf("Inserisci il valore %i", i);
+	    scanf("%f", &p[i]);
 	    if(inferiore(p[i]-x,eps)==0){
 	        printf("È nell'intorno");
 	    }
@@ -46,5 +47,4 @@ int main(){
 	    }
 	    ++i;
 	}
-	
 }
