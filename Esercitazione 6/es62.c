@@ -42,10 +42,24 @@ void minlist(elm * l){
 	printf("Il minimo è %i\n", min);
 }
 elm * delfirst(elm * l){
-	elm * t;
-	t=l->next;
-	free(l);
-	return t;
+	elm * t=l;
+	elm * precedente=NULL;
+	while(t!=NULL){
+		if(t->n<0){
+			printf("valore da eliminare: %i\n", t->n);
+			if(precedente!=NULL){
+				precedente->next=t->next;
+			}
+			else{
+				l=t->next;	
+			}			
+			free(t);
+			break;
+		}
+		precedente=t;
+		t=t->next;
+	}
+	return l;
 }
 
 int main(){
