@@ -26,9 +26,6 @@ void printlist(elm * l){
 		l=l->next;
 	}
 }
-void controlla(elm * l){
-	
-}
 int main(){
 	char c;
 	//creo la testa
@@ -46,5 +43,4 @@ int main(){
 		c=getchar();
 	}	
 	printlist(t);
-	controlla(t);
 }
