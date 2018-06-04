@@ -1,0 +1,2 @@
+se ho ricerca.c, ricerca_header.c e ricerca.h, per compilare devo compilare ricerca_header.c con
+gcc ricerca_header.c -I external-deps ricerca.c -Wall -std=c99
