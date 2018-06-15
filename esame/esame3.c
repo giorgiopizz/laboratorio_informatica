@@ -27,6 +27,9 @@ void printalista(elm * t){
 elm * elemento(pt punto){
         elm * p;
         p=(elm *) malloc(sizeof(elm));
+        if(p!=NULL){
+                exit(EXIT_FAILURE);
+        }
         p->punto=punto;
         p->prox=NULL;
         return p;
