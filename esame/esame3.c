@@ -55,6 +55,18 @@ elm * addback(elm * t, pt punto){
         }
         return t;
 }
+elm * addinfront(elm * t, pt punto){
+        elm * new;
+        new=elemento(punto);
+        if(t!=NULL){
+            new->prox=t;
+            t=new;
+        }
+        else{
+            t=new;
+        }
+        return t;
+}
 elm * leggivalori(elm * t){
         pt punto;
         //leggo i valori tramite scanf
@@ -64,7 +76,7 @@ elm * leggivalori(elm * t){
                 printf("Inserisci i dati per il punto %i\n",i+1);
                 scanf("%f %f %f", &punto.x, &punto.y, &punto.m);
                 //printapunto(punto);
-                t=addback(t, punto);
+                t=addinfront(t, punto);
         }
         return t;
 }
