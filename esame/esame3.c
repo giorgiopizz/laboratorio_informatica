@@ -21,16 +21,16 @@ void printapunto(pt a){
 void printalista(elm * t){
         while(t!=NULL){
                 printapunto(t->punto);
-		t=t->prox;
-	}
+                t=t->prox;
+        }
 }
-elm * elemento(pt punto){
+elm * elemento(pt point){
         elm * p;
         p=(elm *) malloc(sizeof(elm));
         if(p!=NULL){
                 exit(EXIT_FAILURE);
         }
-        p->punto=punto;
+        p->punto=point;
         p->prox=NULL;
         return p;
 }
@@ -55,7 +55,7 @@ elm * leggivalori(elm * t){
         //leggo i valori tramite scanf, essendoci k punti, itero la lettura k volte
         int i;
         for(i=0;i<K;++i){
-                printf("Inserisci le coordinate per il punto %i(devono essere del tipo x y m)\n",i+1);
+                printf("Inserisci le coordinate per il punto %i\n",i+1);
                 scanf("%f %f %f", &punto.x, &punto.y, &punto.m);
                 printapunto(punto);
                 t=addback(t, punto);
@@ -91,8 +91,8 @@ float distanza(pt a, pt b){
 int minore(pt cm, elm * t,float s){
         //i indice per il loop e j indice di quanti numeri sono a
         //distanza inferiore di s, infatti all'inizio è 0
-        elm * l=t;
         int i, j=0;
+        elm * l=t;
         while(l!=NULL){
                 printf("la distanza è: %f\n",distanza(cm, l->punto));
                 printf("la differenza è: %f\n",distanza(cm, l->punto)-s);
@@ -108,7 +108,7 @@ elm * libera(elm * t){
         //funzione ricorsiva che elimina l'ultimo elemento della lista
         if(t->prox!=NULL){
                 elm * l=t;
-	        while(l->prox->prox!=NULL){
+                while(l->prox->prox!=NULL){
                         l=l->prox;
                 }
                 free(l->prox);
@@ -135,7 +135,7 @@ int main(int argc, char * argv[]){
         int i;
         //definisco la testa di una lista concatenata di punti
         elm * t=NULL;
-        printf("Benvenuto!\nInserisci i punti materiali di cui calcolerò il centro di massa:\n");
+        printf("Benvenuto!\nInserisci i punti materiali di cui calcolerò il centro di massa\nL'input deve essere del tipo x y m per un punto\n");
         //li leggo
         t=leggivalori(t);
         //definisco il centro di massa(che è un punto) e lo calcolo
