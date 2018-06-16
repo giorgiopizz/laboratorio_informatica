@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#define K 3
+#define K 5
 //un punto materiale ha 3 attributi la massa, e due coordinate spaziali
 struct punto{
         float x;
@@ -56,6 +56,7 @@ elm * addback(elm * t, pt punto){
         return t;
 }
 elm * addinfront(elm * t, pt punto){
+        //si usa addinfront perchè ha un costo computazionale minore rispetto ad addback
         elm * new;
         new=elemento(punto);
         if(t!=NULL){
