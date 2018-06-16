@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#define K 3
+#define K 50
 struct punto{
         float m;
         float x;

@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#define K 3
+#define K 50
 struct punto{
         float m;
         float x;
@@ -32,6 +32,7 @@ pt cdm(pt punti[]){
         for (i=0;i<K;++i){
                 m=m+punti[i].m;
                 xm=xm+punti[i].x*punti[i].m;
+                printf("%f\n",xm);
                 ym=ym+punti[i].y*punti[i].m;
         }
         cm.m=m;
