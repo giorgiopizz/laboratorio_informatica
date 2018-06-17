@@ -36,6 +36,9 @@ void printalista(lista * lista){
         }
 }
 elm * elemento(pt point){
+        //questa funzione crea un nuovo elemento
+        //alloca dinamicamente la memoria
+        //fornendo il pointer all'elemento
         elm * p;
         p=(elm *) malloc(sizeof(elm));
         if(p==NULL){
@@ -49,10 +52,12 @@ lista * addback(lista * lista, pt punto){
         elm * new;
         new=elemento(punto);
         if(lista->t!=NULL){
+                //se la lista non è vuota aggiunge in coda
                 lista->c->prox=new;
                 lista->c=new;
         }
         else{
+                //se la lista è vuota testa e coda coincidono
                 lista->t=new;
                 lista->c=new;
         }
@@ -81,9 +86,6 @@ pt cdm(lista * lista){
         float ym=0;
         float m=0;
         elm * l=lista->t;
-        if(lista->t==NULL){
-                exit(EXIT_FAILURE);
-        }
         while(l!=NULL){
                 m=m+l->punto.m;
                 xm=xm+l->punto.x*l->punto.m;
@@ -93,7 +95,7 @@ pt cdm(lista * lista){
         }
         cm.m=m;
         //la x e la y del centro di massa sono definite come
-        // la sommatoria di x*m/M quindi bisogna dividere per la massa
+        //la sommatoria di x*m/M quindi bisogna dividere per la massa
         cm.x=xm/m;
         cm.y=ym/m;
         return cm;
@@ -183,12 +185,12 @@ int main(int argc, char * argv[]){
 }
 /*
 Piccola precisazione: è stata usata la funzione addback
-invece di addinfront affinchéil risultato sia lo stesso dell'esempio
-riportato su elearning.
+invece di aggiungere in testa affinché il risultato
+fosse lo stesso dell'esempio riportato su elearning.
 Percorrendo la lista in un senso o nell'altro i risultato non è uguale
 infatti le approssimazioni che la macchina fa sono diverse a seconda
 dei numeri che sta trattando. è stata creata la struct lista per
-la funzione addback, avendo già il pointer alla coda della lista
+la funzione addback per diminuire il costo computazionale
+avendo già il pointer alla coda della lista
 non è costretta a ripercorrerla ogni volta
-
 */
