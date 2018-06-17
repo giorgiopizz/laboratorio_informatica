@@ -28,6 +28,8 @@ void printapunto(pt a){
         printf("Il punto è:\nx:%f,\ny:%f,\nm:%f\n", a.x, a.y, a.m);
 }
 void printalista(lista * lista){
+        //una funzione utile per controllare com'è fatta la lista
+        //non viene usata dal programma ma è utile per il debug
         elm * l;
         l=lista->t;
         while(l!=NULL){
@@ -49,6 +51,7 @@ elm * elemento(pt point){
         return p;
 }
 lista * addback(lista * lista, pt punto){
+        //la funzione aggiunge in coda alla lista
         elm * new;
         new=elemento(punto);
         if(lista->t!=NULL){
@@ -57,7 +60,7 @@ lista * addback(lista * lista, pt punto){
                 lista->c=new;
         }
         else{
-                //se la lista è vuota testa e coda coincidono
+                //se la lista è vuota, testa e coda coincidono
                 lista->t=new;
                 lista->c=new;
         }
@@ -74,14 +77,13 @@ lista * leggivalori(lista * lista){
                 scanf("%f %f %f", &punto.x, &punto.y, &punto.m);
                 lista=addback(lista, punto);
         }
-        //printalista(lista);
         return lista;
 }
 pt cdm(lista * lista){
         pt cm;
         //xm e ym sono rispettivamente la sommatoria di x*m e y*m
         //iniziano da 0 e man mano gli si sommano la massa i-esima
-        //per la coordinata i-esima
+        //per la coordinata(x o y) i-esima
         float xm=0;
         float ym=0;
         float m=0;
@@ -89,7 +91,6 @@ pt cdm(lista * lista){
         while(l!=NULL){
                 m=m+l->punto.m;
                 xm=xm+l->punto.x*l->punto.m;
-                printf("%f\n",m);
                 ym=ym+l->punto.y*l->punto.m;
                 l=l->prox;
         }
@@ -155,23 +156,26 @@ int main(int argc, char * argv[]){
         float s;
         if (argc != 2) {
                 //il programma prende solo un argomento che è s
+                printf("Bisogna immettere s da riga di comando.\n");
                 exit(EXIT_FAILURE);
         }
         else{
                 s = atof(argv[1]);
         }
-        //definisco la testa di una lista concatenata di punti
+        //definisco la testa di una lista concatenata di punti    
         lista * list;
         list=(lista*)malloc(sizeof(lista));
         if(list==NULL){
                 exit(EXIT_FAILURE);
         }
+        //imposto inizialmente i due pointer testa e coda a NULL perché
+        //non c'è ancora alcun elemento
         list->t=NULL;
         list->c=NULL;
         printf("Benvenuto!\n");
         printf("Inserisci i punti materiali\n");
-        printf("L'input deve essere del tipo x y m per un punto\n");
-        //leggo i valori
+        printf("L'input deve essere del tipo x y m ed invio per ogni punto\n");
+        //leggo i valori inserendoli nella lista
         list=leggivalori(list);
         //definisco il centro di massa(che è un punto) e lo calcolo
         pt cm;
@@ -188,6 +192,7 @@ Piccola precisazione: è stata usata la funzione addback
 invece di aggiungere in testa affinché il risultato
 fosse lo stesso dell'esempio riportato su elearning.
 Percorrendo la lista in un senso o nell'altro i risultato non è uguale
+(differiscono per la centomillesima parte)
 infatti le approssimazioni che la macchina fa sono diverse a seconda
 dei numeri che sta trattando. è stata creata la struct lista per
 la funzione addback per diminuire il costo computazionale
