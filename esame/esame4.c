@@ -1,5 +1,8 @@
-//esame3
-//si usa una lista concatenata per immagazzinare i punti
+/*826389 Giorgio Pizzati
+Esame di Laboratorio di informatica del 15/06/2018
+In questo programma si usa una lista concatenata 
+di punti per memorizzare i punti materiali letti
+tramite scanf dallo standard input*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -44,6 +47,7 @@ elm * elemento(pt point){
         elm * p;
         p=(elm *) malloc(sizeof(elm));
         if(p==NULL){
+                printf("Non è presente abbastanza memoria");
                 exit(EXIT_FAILURE);
         }
         p->punto=point;
@@ -166,6 +170,7 @@ int main(int argc, char * argv[]){
         lista * list;
         list=(lista*)malloc(sizeof(lista));
         if(list==NULL){
+                printf("Non è presente abbastanza memoria");
                 exit(EXIT_FAILURE);
         }
         //imposto inizialmente i due pointer testa e coda a NULL perché
@@ -184,8 +189,13 @@ int main(int argc, char * argv[]){
         printapunto(cm);
         printf("Il numero di punti che distano meno di s");
         printf(" dal centro di massa è:%i\n",minore(cm,list,s));
+        //la funzione libera percorre la lista liberando la memoria allocata
+        //per ogni singolo punto
         list=libera(list);
+        //anche se la lista è stata liberata è necessario liberare la memoria
+        //allocata per i due pointer t e c
         free(list);
+        return 0;
 }
 /*
 Piccola precisazione: è stata usata la funzione addback
