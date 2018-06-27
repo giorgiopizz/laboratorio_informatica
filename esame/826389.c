@@ -159,12 +159,12 @@ lista * libera(lista * lista){
         return lista;
 }
 int main(int argc, char * argv[]){
-        //dichiaro la variabile s di
+        //dichiaro la variabile s
         //le sarà assegnato il valore tramite riga di comando
         float s;
         if (argc != 2) {
                 //il programma prende solo un argomento che è s
-                printf("Bisogna immettere s da riga di comando.\n");
+                printf("Bisogna immettere s(e solo s) da riga di comando.\n");
                 exit(EXIT_FAILURE);
         }
         else{
