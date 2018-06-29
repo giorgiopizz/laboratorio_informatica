@@ -38,7 +38,7 @@ void prodotto(int prod[], int primo[], int secondo[]){
             if((i-diff)>0){
                 num=primo[i]*secondo[i-diff]+resto;
                 resto=num/10;
-                prod[i]=num
+                prod[i]=num;
             }
             else{
                 som[i]=primo[i];
